@@ -8,85 +8,83 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <!-- Primo campo di input (a sinistra) -->
     <EditText
+        android:id="@+id/editText1"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="64dp">
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintHorizontal_chainStyle="spread" />
 
-    </EditText>
-
+    <!-- Secondo campo di input (a destra) -->
     <EditText
         android:id="@+id/editText"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        tools:layout_editor_absoluteX="212dp"
-        tools:layout_editor_absoluteY="64dp">
+        app:layout_constraintTop_toTopOf="@+id/editText1"
+        app:layout_constraintBottom_toBottomOf="@+id/editText1"
+        app:layout_constraintStart_toEndOf="@+id/editText1"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    </EditText>
+    <!-- Schermo/Testo del risultato -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="325dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/editText1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Blocco operazioni (+, -, *, /) -->
     <LinearLayout
+        android:id="@+id/linearLayoutOps"
         android:layout_width="210dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="334dp">
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <Button
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="@string/button_plus"
-            tools:layout_editor_absoluteX="200dp"
-            tools:layout_editor_absoluteY="335dp">
-
-        </Button>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/button_plus" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="@string/button_minus"
-            tools:layout_editor_absoluteX="200dp"
-            tools:layout_editor_absoluteY="385dp">
-
-        </Button>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/button_minus" />
 
         <Button
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="@string/button_multiply"
-            tools:layout_editor_absoluteX="200dp"
-            tools:layout_editor_absoluteY="435dp">
-
-        </Button>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/button_multiply" />
 
         <Button
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="@string/button_divide"
-            tools:layout_editor_absoluteX="200dp"
-            tools:layout_editor_absoluteY="485dp">
-
-        </Button>
+            android:layout_gravity="center_horizontal"
+            android:text="@string/button_divide" />
     </LinearLayout>
 
-
-    <TextView
-        android:layout_width="325dp"
-        android:layout_height="70dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="162dp">
-
-    </TextView>
-
+    <!-- Tasto Calcola / Uguale -->
     <Button
+        android:id="@+id/buttonResult"
         android:layout_width="300dp"
         android:layout_height="70dp"
+        android:layout_marginTop="32dp"
         android:text="@string/button_result"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="583dp">
-
-    </Button>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutOps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
