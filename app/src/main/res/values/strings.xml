@@ -6,4 +6,7 @@
     <string name="Minus">-</string>
     <string name="Plus">+</string>
     <string name="Equals">=</string>
+    <string name="num_1">Num 1</string>
+    <string name="num_2">Num 2</string>
+    <string name="result_text">Risultato: -</string>
 </resources>
